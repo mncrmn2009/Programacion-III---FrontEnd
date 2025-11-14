@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Simpsons API</title>
+    <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__titulo">API de los Simpsons</h1>
+        <p class="header__subtitulo">Explorá los personajes de los Simpsons con TypeScript</p>
+    </header>
+
+    <main class="app-main">
+        <section class="controls">
+            <button class="button button--primary" id="loadButton">Cargar Personajes</button>
+        </section>
+
+        <section class="cargando cargando--hidden" id="cargando">
+            <div class="cargando__spinner"></div>
+            <p class="cargando__text">Cargando personajes...</p>
+        </section>
+
+        <div class="error-message error-message--hidden" id="error"></div>
+
+        <section class="characters" id="characters"></section>
+    </main>
+
+    <footer class="app-footer">
+        <p class="app-footer__texto">
+        API: <a class="app-footer__link" href="https://thesimpsonsapi.com" target="_blank">The Simpsons Quote API</a>
+        </p>
+    </footer>
+
+    <script type="module" src="./dist/main.js"></script>
+</body>
+</html>

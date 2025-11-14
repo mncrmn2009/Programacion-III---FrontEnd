@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+    margin : 0;
+    padding: 0;
+}
+
+/* ========== Layout principal ========== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffcc00 0%, #ff8f00 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ========== Header ========== */
+.header {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.header__titulo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.header__subtitulo {
+    color: #fefefe;
+}
+
+/* ========== Botones ========== */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.button {
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+.button--primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.button--primary:hover {
+    background-color: #0056b3;
+}
+
+
+/* ========== Cargando ========== */
+.cargando {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.cargando--hidden {
+    display: none;
+}
+
+.cargando__spinner {
+    margin: 15px auto;
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    border-top: 6px solid #fff;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    animation: spin 1s linear infinite;
+}
+
+.cargando__text {
+    margin-top: 10px;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========== Mensajes de error ========== */
+.error-message {
+    background-color: #e53935;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.error-message--hidden {
+    display: none;
+}
+
+/* ========== Tarjetas de personajes ========== */
+.characters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    justify-items: center;
+}
+.character-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.character-card:hover {
+    transform: scale(1.05);
+}
+
+.character-card__img {
+    width: 100%;
+    background: #f1f1f1;
+}
+
+.character-card__name {
+    font-weight: 600;
+    margin: 10px 0 5px;
+}
+
+.character-card__phrase {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* ======= Responsivo ======= */
+
+@media (min-width: 1200px) {
+  .characters {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .characters {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .characters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .characters {
+    grid-template-columns: 1fr;
+  }
+
+  .character-card {
+    width: 90%;
+  }
+}
+
+/* ========== Footer ========== */
+.app-footer {
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.app-footer__link {
+    color: #fff;
+    text-decoration: underline;
+}
